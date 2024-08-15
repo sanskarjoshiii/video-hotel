@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="https://png.pngtree.com/png-clipart/20230518/original/pngtree-kadai-paneer-curry-png-image_9164812.png" alt="Paneer Dish" class="header-img">
+            <h1>HOTEL BITTO</h1>
+            <img src="https://png.pngtree.com/png-vector/20231013/ourmid/pngtree-aromatic-spice-delight-a-spicy-delicious-mutton-curry-highlighting-texture-set-png-image_10267066.png" alt="Non-Veg Dish" class="header-img">
+        </div>
+        <h3>Annabhau Sathe, Near Kalash Lawns, Kopargaon, Pincode-423601</h3>
+        <button id="new-bill-btn">New Bill</button>
+        <div id="bill-section" style="display:none;">
+            <div id="customer-info">
+                <label for="customer-name">TABLE NO.</label>
+                <input type="text" id="customer-name" placeholder="Enter Table No." required>
+                <button id="start-bill-btn">Start Bill</button>
+            </div>
+            <div id="item-selection" style="display:none;">
+                <h2>Non-Veg Items</h2>
+                <select id="non-veg-items">
+                    <!-- Non-Veg Items -->
+                    <option value="MUTTON SUKKA">MUTTON SUKKA - $110</option>
+                    <option value="MUTTON FRY">MUTTON FRY - $120</option>
+                    <option value="MUTTON MASALA">MUTTON MASALA - $110</option>
+                    <option value="MUTTON BUTTER">MUTTON BUTTER - $150</option>
+                    <option value="MUTTON MOGHLAI">MUTTON MOGHLAI - $140</option>
+                    <option value="MUTTON KOLHAPURI">MUTTON KOLHAPURI - $140</option>
+                    <option value="MUTTON KADAI">MUTTON KADAI - $180</option>
+                    <option value="MUTTON HANDI">MUTTON HANDI - $180</option>
+                    <option value="MUTTON LIVER SUKKHA">MUTTON LIVER SUKKHA - $110</option>
+                    <option value="MUTTON LIVER MASALA">MUTTON LIVER MASALA - $110</option>
+                    <option value="MUTTON LIVER FRY">MUTTON LIVER FRY - $120</option>
+                    <option value="VAJARI MASALA">VAJARI MASALA - $90</option>
+                    <option value="VAJARI FRY">VAJARI FRY - $100</option>
+                </select>
+                <button type="button" id="add-non-veg-item-btn">Add Non-Veg Item</button>
+
+                <h2>Veg Items</h2>
+                <select id="veg-items">
+                    <!-- Veg Items -->
+                    <option value="Shahi Paneer">Shahi Paneer - $220.00</option>
+                    <option value="Paneer Malai Kofta">Paneer Malai Kofta - $220.00</option>
+                    <option value="Paneer Kaju Masala">Paneer Kaju Masala - $220.00</option>
+                    <option value="Kaju Curry">Kaju Curry - $180.00</option>
+                    <option value="Shev Bhaji Black">Shev Bhaji Black - $120.00</option>
+                    <option value="Mutter Paneer">Mutter Paneer - $150.00</option>
+                    <option value="Shev Bhaji Red">Shev Bhaji Red - $90.00</option>
+                    <option value="Aloo Mutter">Aloo Mutter - $100.00</option>
+                    <option value="Dal Tadka">Dal Tadka - $120.00</option>
+                    <option value="Dal Fry">Dal Fry - $100.00</option>
+                    <option value="Jeera Aloo">Jeera Aloo - $100.00</option>
+                    <option value="Veg Kolhapuri">Veg Kolhapuri - $150.00</option>
+                    <option value="Mix Veg">Mix Veg - $120.00</option>
+                    <option value="Baingan Masala">Baingan Masala - $100.00</option>
+                    <option value="Lasooni Methi">Lasooni Methi - $120.00</option>
+                    <option value="Bhendi Fry">Bhendi Fry - $100.00</option>
+                    <option value="Matki Masala">Matki Masala - $100.00</option>
+                    <option value="Green Salad">Green Salad - $70.00</option>
+                    <option value="Veg Kofta">Veg Kofta - $180.00</option>
+                    <option value="Veg Lajawab">Veg Lajawab - $160.00</option>
+                    <option value="Paneer Kurmure">Paneer Kurmure - $220.00</option>
+                    <option value="Paneer Sunana">Paneer Sunana - $240.00</option>
+                    <option value="Paneer Lajij">Paneer Lajij - $170.00</option>
+                    <option value="Paneer Pasanda">Paneer Pasanda - $220.00</option>
+                    <option value="Veg Maharaja">Veg Maharaja - $220.00</option>
+                    <option value="Paneer Maharaja">Paneer Maharaja - $180.00</option>
+                    <option value="Paneer Kofta">Paneer Kofta - $170.00</option>
+                    <option value="Paneer Angara">Paneer Angara - $180.00</option>
+                    <option value="Paneer Mirch Masala">Paneer Mirch Masala - $180.00</option>
+                    <option value="Paneer Amritsari">Paneer Amritsari - $180.00</option>
+                    <option value="Paneer Tikka">Paneer Tikka - $220.00</option>
+                    <option value="Paneer Do Pyaja">Paneer Do Pyaja - $200.00</option>
+                    <option value="Veg Maratha">Veg Maratha - $200.00</option>
+                    <option value="Veg Harabhara">Veg Harabhara - $180.00</option>
+                    <option value="Chana Koliwada">Chana Koliwada - $90.00</option>
+                    <option value="Chana Roast">Chana Roast - $100.00</option>
+                    <option value="Veg Sik Kabab">Veg Sik Kabab - $170.00</option>
+                    <option value="Veg Bhoona">Veg Bhoona - $220.00</option>
+                    <option value="Soyabean Masala">Soyabean Masala - $100.00</option>
+                    <option value="Paneer Masala">Paneer Masala - $150.00</option>
+                    <option value="Schezwan Noodles">Schezwan Noodles - $120.00</option>
+                    <option value="Schezwan Fried Rice">Schezwan Fried Rice - $120.00</option>
+                    <option value="Manchurian">Manchurian - $120.00</option>
+                    <option value="Soyabean Chilli">Soyabean Chilli - $120.00</option>
+                    <option value="Manchurian Noodles">Manchurian Noodles - $150.00</option>
+                    <option value="Manchurian Rice">Manchurian Rice - $150.00</option>
+                    <option value="Paneer Chilli">Paneer Chilli - $150.00</option>
+                    <option value="Paneer Crispy">Paneer Crispy - $150.00</option>
+                    <option value="Paneer 65">Paneer 65 - $180.00</option>
+                    <option value="Aloo 65">Aloo 65 - $150.00</option>
+                    <option value="Paneer Manchurian">Paneer Manchurian - $170.00</option>
+                    <option value="Chinese Triple Rice">Chinese Triple Rice - $110.00/$180.00</option>
+                    <option value="Veg Manchow Soup">Veg Manchow Soup - $120.00</option>
+                    <option value="Hot & Sour Soup">Hot & Sour Soup - $120.00</option>
+                    <option value="Tomato Soup">Tomato Soup - $120.00</option>
+                    <option value="Bread Butter">Bread Butter - $120.00</option>
+                    <option value="Sandwich">Sandwich - $70.00</option>
+                    <option value="Veg Cheese Sandwich">Veg Cheese Sandwich - $130.00</option>
+                    <option value="Paneer Momos">Paneer Momos - $90.00</option>
+                    <option value="Fry Papad">Fry Papad - $20.00</option>
+                    <option value="Masala Papad">Masala Papad - $35.00</option>
+                    <option value="Roasted Papad">Roasted Papad - $20.00</option>
+                    <option value="Nagili Fry Papad">Nagili Fry Papad - $30.00</option>
+                    <option value="Misal Pav">Misal Pav - $50.00</option>
+                    <option value="Rassa Vada">Rassa Vada - $40.00</option>
+                    <option value="Bhajiya">Bhajiya - $25.00</option>
+                    <option value="Vada Pav">Vada Pav - $10.00</option>
+                    <option value="Batata Vada">Batata Vada - $15.00</option>
+                </select>
+                <button type="button" id="add-veg-item-btn">Add Veg Item</button>
+
+                <h2>Drinks</h2>
+                <select id="drinks-items">
+                    <!-- Drinks -->
+                    <option value="Water bottle">Water bottle</option>
+                <option value="Tea">Tea</option>
+                <option value="Milk">Milk</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Butter Milk">Butter Milk</option>
+                <option value="Water">Water</option>
+                <option value="Cold Drinks">Cold Drinks</option>
+                <option value="Ice Cream">Ice Cream</option>
+                <option value="Juice">Juice</option>
+                </select>
+                <button id="add-drinks-item-btn">Add Drink</button>
+            </div>
+            <div id="items-list"></div>
+            <h3>Total: $<span id="total">0</span></h3>
+            <button id="finalize-bill-btn" style="display:none;">Finalize Bill</button>
+        </div>
+        <!-- Video Section -->
+        <div class="video-section">
+            <video width="100%" controls>
+                <source src="https://videos.pexels.com/video-files/2620043/2620043-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
